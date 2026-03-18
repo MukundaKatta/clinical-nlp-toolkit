@@ -1,63 +1,43 @@
-# Clinical Nlp Toolkit
+# clinical-nlp-toolkit
 
-NLP for clinical notes — entity extraction, coding, summarization
+**NLP toolkit for clinical notes — entity extraction, coding, and summarization**
 
-## Features
+![Build](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-proprietary-red)
 
-- Api
-Deidentifier
-Medication Extractor
-Negation Detector
-Ner
-Pipeline
-Temporal
-
-## Tech Stack
-
-- **Language:** Python
-- **Framework:** FastAPI
-- **Key Dependencies:** pydantic,fastapi,uvicorn,anthropic,openai,numpy
-- **Containerization:** Docker + Docker Compose
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.11+
-- Docker & Docker Compose (optional)
-
-### Installation
-
+## Install
 ```bash
-git clone https://github.com/MukundaKatta/clinical-nlp-toolkit.git
-cd clinical-nlp-toolkit
-pip install -r requirements.txt
+pip install -e ".[dev]"
 ```
 
-### Running
+## Quick Start
+```python
+from src.core import ClinicalNlpToolkit
+ instance = ClinicalNlpToolkit()
+r = instance.process(input="test")
+```
 
+## CLI
 ```bash
-uvicorn app.main:app --reload
+python -m src status
+python -m src run --input "data"
 ```
 
-### Docker
+## API
+| Method | Description |
+|--------|-------------|
+| `process()` | Process |
+| `analyze()` | Analyze |
+| `transform()` | Transform |
+| `validate()` | Validate |
+| `export()` | Export |
+| `get_stats()` | Get stats |
+| `get_stats()` | Get stats |
+| `reset()` | Reset |
 
+## Test
 ```bash
-docker-compose up
-```
-
-## Project Structure
-
-```
-clinical-nlp-toolkit/
-├── src/           # Source code
-├── tests/         # Test suite
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
+pytest tests/ -v
 ```
 
 ## License
-
-MIT
+(c) 2026 Officethree Technologies. All Rights Reserved.
