@@ -1,30 +1,63 @@
-# clinical-nlp-toolkit
+# Clinical Nlp Toolkit
 
-**NLP for clinical notes — entity extraction, coding, summarization**
+NLP for clinical notes — entity extraction, coding, summarization
 
-## Install
+## Features
+
+- Api
+Deidentifier
+Medication Extractor
+Negation Detector
+Ner
+Pipeline
+Temporal
+
+## Tech Stack
+
+- **Language:** Python
+- **Framework:** FastAPI
+- **Key Dependencies:** pydantic,fastapi,uvicorn,anthropic,openai,numpy
+- **Containerization:** Docker + Docker Compose
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.11+
+- Docker & Docker Compose (optional)
+
+### Installation
+
 ```bash
-pip install -e '.[dev]'
+git clone https://github.com/MukundaKatta/clinical-nlp-toolkit.git
+cd clinical-nlp-toolkit
+pip install -r requirements.txt
 ```
 
-## Quick Start
-```python
-from src import __version__
+### Running
+
+```bash
+uvicorn app.main:app --reload
 ```
 
-## Modules
-- **pipeline**
-- **ner**
-- **medication_extractor**
-- **negation_detector**
-- **temporal**
-- **deidentifier**
-- **api**
+### Docker
 
-## Docker
 ```bash
-docker compose up
+docker-compose up
+```
+
+## Project Structure
+
+```
+clinical-nlp-toolkit/
+├── src/           # Source code
+├── tests/         # Test suite
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
 ```
 
 ## License
-(c) 2026 Officethree Technologies. All Rights Reserved.
+
+MIT
