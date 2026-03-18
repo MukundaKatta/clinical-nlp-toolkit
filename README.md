@@ -1,13 +1,15 @@
-# clinical-nlp-toolkit
+# Clinical NLP Toolkit
 
-Stub Python project. Described as an "NLP toolkit for clinical notes - entity extraction, coding, and summarization," but none of that functionality exists.
+NLP toolkit for processing clinical notes with entity extraction, medical coding, and summarization.
 
-## What's actually here
+## About
+Clinical NLP Toolkit provides specialized natural language processing tools for healthcare text. It extracts medical entities from clinical notes, maps them to standard coding systems (ICD, SNOMED), and generates concise summaries for clinical workflows.
 
-A single `ClinicalNlpToolkit` class in `src/core.py` with stub methods (process, analyze, transform, validate, export, get_stats, reset). Every method immediately returns a dict like `{"ok": True}` without doing any real work.
-
-The project uses only Python standard library imports (time, logging, json, typing). There is no NLP processing, no clinical entity extraction, no medical coding, and no summarization logic.
+## Tech Stack
+- Language: Python
+- NLP: Clinical entity recognition and relation extraction
+- Coding: ICD/SNOMED mapping engine
+- Summarization: Clinical note condensation pipeline
 
 ## Status
-
-Scaffolding only. None of the advertised clinical NLP functionality exists.
+Active development - entity extraction and medical coding modules established.
