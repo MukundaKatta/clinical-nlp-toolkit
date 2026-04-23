@@ -1,6 +1,11 @@
 """Core clinical-nlp-toolkit implementation — ClinicalNLP."""
-import uuid, time, json, logging, hashlib, math, statistics
-from typing import Any, Dict, List, Optional, Tuple
+import uuid
+import time
+import json
+import logging
+import hashlib
+import statistics
+from typing import Any, Dict, List, Optional
 from dataclasses import dataclass, field
 
 logger = logging.getLogger(__name__)
@@ -47,7 +52,7 @@ class ClinicalNLP:
         self._op_count = 0
         self._history: List[Dict] = []
         self._store: Dict[str, Any] = {}
-        logger.info(f"ClinicalNLP initialized")
+        logger.info("ClinicalNLP initialized")
 
 
     def extract_entities(self, **kwargs) -> Dict[str, Any]:

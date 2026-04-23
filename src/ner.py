@@ -1,7 +1,6 @@
 """clinical-nlp-toolkit — ner module. NLP for clinical notes — entity extraction, coding, summarization"""
 import logging
 from typing import Any, Dict, List, Optional
-from dataclasses import dataclass, field
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
@@ -13,7 +12,7 @@ class NerConfig(BaseModel):
     enabled: bool = True
     max_retries: int = 3
     timeout: float = 30.0
-    options: Dict[str, Any] = field(default_factory=dict) if False else {}
+    options: Dict[str, Any] = {}
 
 
 class NerResult(BaseModel):
@@ -39,7 +38,7 @@ class Ner:
             return
         await self._setup()
         self._initialized = True
-        logger.info(f"Ner initialized")
+        logger.info("Ner initialized")
     
     async def _setup(self) -> None:
         """Internal setup — override in subclasses."""
@@ -69,4 +68,4 @@ class Ner:
         """Graceful shutdown."""
         self._state.clear()
         self._initialized = False
-        logger.info(f"Ner shut down")
+        logger.info("Ner shut down")
