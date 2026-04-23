@@ -1,7 +1,6 @@
 """clinical-nlp-toolkit — temporal module. NLP for clinical notes — entity extraction, coding, summarization"""
 import logging
 from typing import Any, Dict, List, Optional
-from dataclasses import dataclass, field
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
@@ -13,7 +12,7 @@ class TemporalConfig(BaseModel):
     enabled: bool = True
     max_retries: int = 3
     timeout: float = 30.0
-    options: Dict[str, Any] = field(default_factory=dict) if False else {}
+    options: Dict[str, Any] = {}
 
 
 class TemporalResult(BaseModel):
@@ -39,7 +38,7 @@ class Temporal:
             return
         await self._setup()
         self._initialized = True
-        logger.info(f"Temporal initialized")
+        logger.info("Temporal initialized")
     
     async def _setup(self) -> None:
         """Internal setup — override in subclasses."""
@@ -69,4 +68,4 @@ class Temporal:
         """Graceful shutdown."""
         self._state.clear()
         self._initialized = False
-        logger.info(f"Temporal shut down")
+        logger.info("Temporal shut down")

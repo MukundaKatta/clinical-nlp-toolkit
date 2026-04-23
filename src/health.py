@@ -1,5 +1,7 @@
 """clinical-nlp-toolkit — health check and metrics."""
-import time, platform, sys
+import time
+import platform
+import sys
 from typing import Dict, Any
 
 _start_time = time.time()

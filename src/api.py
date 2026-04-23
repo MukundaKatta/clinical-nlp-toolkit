@@ -2,7 +2,9 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from typing import Any, Dict, List, Optional
-import logging, time, uuid
+import logging
+import time
+import uuid
 
 logger = logging.getLogger(__name__)
 app = FastAPI(title="clinical-nlp-toolkit", version="0.1.0", description="clinical-nlp-toolkit API")

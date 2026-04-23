@@ -1,5 +1,6 @@
 """CLI for clinical-nlp-toolkit."""
-import sys, json, argparse
+import json
+import argparse
 from .core import ClinicalNlpToolkit
 
 def main():
@@ -13,7 +14,7 @@ def main():
     elif args.command == "run":
         print(json.dumps(instance.process(input=args.input or "test"), indent=2, default=str))
     elif args.command == "info":
-        print(f"clinical-nlp-toolkit v0.1.0 — NLP toolkit for clinical notes — entity extraction, coding, and summarization")
+        print("clinical-nlp-toolkit v0.1.0 — NLP toolkit for clinical notes — entity extraction, coding, and summarization")
 
 if __name__ == "__main__":
     main()
