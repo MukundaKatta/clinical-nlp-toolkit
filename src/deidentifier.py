@@ -1,7 +1,7 @@
 """clinical-nlp-toolkit — deidentifier module. NLP for clinical notes — entity extraction, coding, summarization"""
 import logging
 from typing import Any, Dict, List, Optional
-from dataclasses import dataclass, field
+from dataclasses import field
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
@@ -39,7 +39,7 @@ class Deidentifier:
             return
         await self._setup()
         self._initialized = True
-        logger.info(f"Deidentifier initialized")
+        logger.info("Deidentifier initialized")
     
     async def _setup(self) -> None:
         """Internal setup — override in subclasses."""
@@ -69,4 +69,4 @@ class Deidentifier:
         """Graceful shutdown."""
         self._state.clear()
         self._initialized = False
-        logger.info(f"Deidentifier shut down")
+        logger.info("Deidentifier shut down")

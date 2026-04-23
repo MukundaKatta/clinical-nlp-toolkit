@@ -1,5 +1,8 @@
 """clinical-nlp-toolkit — utility functions."""
-import time, hashlib, logging, functools
+import time
+import hashlib
+import logging
+import functools
 from typing import Any, Callable, TypeVar, Optional
 
 logger = logging.getLogger(__name__)

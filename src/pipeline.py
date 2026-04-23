@@ -1,7 +1,7 @@
 """clinical-nlp-toolkit — pipeline module. NLP for clinical notes — entity extraction, coding, summarization"""
 import logging
 from typing import Any, Dict, List, Optional
-from dataclasses import dataclass, field
+from dataclasses import field
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
@@ -39,7 +39,7 @@ class Pipeline:
             return
         await self._setup()
         self._initialized = True
-        logger.info(f"Pipeline initialized")
+        logger.info("Pipeline initialized")
     
     async def _setup(self) -> None:
         """Internal setup — override in subclasses."""
@@ -69,4 +69,4 @@ class Pipeline:
         """Graceful shutdown."""
         self._state.clear()
         self._initialized = False
-        logger.info(f"Pipeline shut down")
+        logger.info("Pipeline shut down")
