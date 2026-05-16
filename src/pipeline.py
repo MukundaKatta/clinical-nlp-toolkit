@@ -1,7 +1,6 @@
 """clinical-nlp-toolkit — pipeline module. NLP for clinical notes — entity extraction, coding, summarization"""
 import logging
 from typing import Any, Dict, List, Optional
-from dataclasses import field
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
@@ -13,7 +12,7 @@ class PipelineConfig(BaseModel):
     enabled: bool = True
     max_retries: int = 3
     timeout: float = 30.0
-    options: Dict[str, Any] = field(default_factory=dict) if False else {}
+    options: Dict[str, Any] = {}
 
 
 class PipelineResult(BaseModel):
